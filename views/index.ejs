@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node CRUD</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+    <a href="/add" class="btn btn-primary mb-4" style="color: white;">Add New</a>
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Author</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i = 0; i< data.length; i++) { %>
+            <tr>
+                <td><%= data[i].name%></td>
+                <td><%= data[i].author%></td>
+                <td><a href="/delete/<%= data[i].id %>" class="btn btn-danger">Delete</a></td>
+                <td><a href="/edit/<%= data[i].id %>" class="btn btn-primary">Edit</a></td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>
